@@ -126,7 +126,7 @@ the live status of DOS Network.
 基于这些丰富的链上指标，可以构建监控Dapp，展示DOS网络的实时状态。
 
 
-Registration system
+Registration system 注册系统
 
 For DOS off-chain instances to join the network, they need to stake and lock some
 DOS tokens as security deposit, and to register their deposit address as well as
@@ -135,6 +135,9 @@ one threshold group $Gi$ as groups may overlap with each other. The registration
 process of threshold groups are described in the off-chain architecture section
 below.
 
+对于DOS链下实例加入网络，他们需要投注并锁定一些DOS token作为保证金，在注册合约中登记他们的
+存款地址和支付地址。 他们在一个至少1个阈值组$Gi$ 作为组 进行注册， 可能会彼此重叠。
+阈值组 的注册过程在下面的off-chain 结构一节中描述。
 
 The security deposit makes the system resistant to sybil attacks and enhances
 network security. It also serves as a kind of commitment that the node operator
@@ -145,15 +148,27 @@ and deregistration flips. Any instance with out-of-bound offtime would also be
 penalized by forfeiting part of its deposit. Groups with no responses up to certain
 limit would be removed from registration system.
 
+保证金使系统能够抵抗女巫攻击(sybil attacks)，提高了系统的安全性。
+它还能作为节点操作的一种承诺，贡献带宽和计算能力使DOS网络更强大，他们将获得“采矿”奖励并赚取手续费。
+锁定期有助于稳定网络，以摆脱过于频繁的注册和注销。
+任何超时的实例也是如此，没收部分押金作为惩罚。
+在一定范围内没有响应的组将从注册系统中删除。
 
-Payment system
+
+Payment system 支付系统
 
 The payment of a query request goes to the selected threshold group that handles it,
 and is distributed among honest members. Payments will be stored in the payment
 contract first, as the transfer to node runners doesn’t necessarily happen in real time
+
 - a withdrawal pattern is preferable and node operators are able to check and
 withdraw their earnings through a frontend UI or interacting with payment contract
 directly.
+
+查询请求的支付给处理它所选“阈值组”，并在诚实的成员之间分发。
+支付将首先存储在支付合约中，因为转移到节点运行器不一定是实时发生的-
+退出模式更可取，节点操作者可以检查和提取其收入，通过前端UI或者直接与付款合同进行交互。
+
 
 DOS token is used in the form of natively supported payment token, as well as the
 staking token. However, for blockchains with widely-accepted stablecoins (e.g.
@@ -163,10 +178,19 @@ also be easier to make. We’ll support DOS as payment token first, in the long 
 node runners and token holders will have governance rights to vote for which
 stablecoins (DAI/USDC/TUSD/etc.) to be accepted as extra payment tokens.
 
+DOStoken以本地支持的 支付token和抵押token 的形式使用。
+然而，对于具有广泛接受的稳定币的区块链(例如Ethereum), 稳定币 是一个更好的支付token，
+节点运行者不会因加密价格的波动而面临风险; 收费的定价模式也将更容易制定。
+我们将首先支持DOS作为支付token，从长远来看，节点运行者和令牌持有者将有治理权投票选择接受哪些stablecoins (DAI/USDC/TUSD/等等)作为额外的支付token。
+
+
 Different payment schemes will also be supported: pay-per-use will be widely
 adopted and suitable for personal developers and light-use Dapps, while discounted
 subscription model will be more favorable to heavily dependent applications such as
 stablecoins and other decentralized open finance platforms.
+
+不同的支付方案也将得到支持:将广泛采用按次付费适用于个人开发人员和轻用dapp，
+价格优惠订阅模型将更有利于高度依赖的应用程序，如稳定币和其他分散的开放式金融平台。
 
 The on-chain system will take modular design pattern into mind that all on-chain
 contracts will be upgradable. Since it’s an open and distributed network environment
@@ -174,6 +198,11 @@ with different parties have different economic appeals, there’s no simple perf
 model to rule them all. More governance experiments and economic models will be
 researched and explored in future.
 
+链上系统将采用模块化设计模式，即所有链上合同是可升级的。
+因为它是一个开放的分布式网络环境与不同的群体有不同的经济诉求，没有一个简单完美
+模式全部适用于它们。 更多的治理实验和经济模型在未来进行研究和探索。
+
+---
 
 2.4 Cross-Chain Interoperability
 
