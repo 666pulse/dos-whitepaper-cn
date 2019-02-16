@@ -204,7 +204,7 @@ researched and explored in future.
 
 ---
 
-2.4 Cross-Chain Interoperability
+2.4 Cross-Chain Interoperability 跨链互操作性
 
 DOS Network opens a door to perform cross-chain interaction between
 heterogeneous blockchains. Assuming DOS Network supports data feed oracle
@@ -212,6 +212,11 @@ services to both Ethereum blockchain and EOS blockchain, then theoretically, sma
 contract on Ethereum is able to trigger cross-chain state changes, flowing through
 DOS client nodes, calling into smart contract on EOS. DOS Network thus is acting as
 connectors or bridges between supported heterogeneous chains.
+
+DOS 打开一扇门，在异构区块链之间进行交叉链互动。
+假设DOS网络支持数据为以太坊区块链和EOS区块链提供oracle 服务，
+理论上是以太坊的智能合约能够触发跨链的状态变化，流经DOS客户端节点，在EOS上调用智能合约。
+DOS网络的作用就是充当异构链之间的连接器或桥梁。
 
 A simple application is like exchanging heterogenous crypto asset atomically.
 Decentralized exchanges nowadays can only trade homogeneous crypto assets in
@@ -223,14 +228,36 @@ and account balance state changes upon calling from the other DEX contract
 address through DOS connectors. This example showcases the potential of DOS
 Network in cross-chain interoperability.
 
+一个简单的应用程序就像原子地交换异构加密资产。
+如今，分布式交易所只能交易同质加密资产在相同的区块链上。分布式交易所，如EtherDelta或0x
+无法直接与EOS进行交易。 然而，通过DOS的帮助，
+it’s achievable by deploying two DEX contracts on Ethereum and EOS
+blockchain respectively and defining two cooperative functions to trigger orderbook
+and account balance state changes upon calling from the other DEX contract address
+through DOS connectors.
+这个例子展示了DOS在网络中的跨链互操作性的潜力。
+
 The operation and maintenance of any newly supported blockchain’s full node (or
 utilizing remote full node services like infura ) is to the node operators’ economic
 interests and capability, while DOS Network team is responsible for porting and
 deploying on-chain system contracts to newly supported chains and releasing
 off-chain core client software including protocol update and new adapter support.
+
 To start up oracle services to newly supported chains we need to go through similar
 bootstrapping process as mentioned in section 2.3.1, mainly the one-time group
-registration and non-interactive DKG process. Noting that for various supported
+registration and non-interactive DKG process.
+
+Noting that for various supported
 blockchains, chain-wide system variables like group size M and number of
 registered groups T could be different; the random number r published on different
 chains are also different in general.
+
+任何新支持的区块链的完整节点（或利用infura等远程全节点服务）的运营和维护都
+是对节点运营商的经济利益和能力的影响。DOS网络团队负责将链上系统合约移植和部署到新支持的链上，
+并发布链外核心客户端软件，包括协议更新和新的适配器支持。
+
+要为新支持的链启动oracle服务，我们需要经历类似的事情。第2.3.1节中提到的引导过程，
+主要是一次性组注册和非交互式DKG流程。
+
+注意到各种支持区块链，链范围的系统变量，如组大小M和数量注册组T可能不同;
+随机数r发表于不同的链也一般不同。
