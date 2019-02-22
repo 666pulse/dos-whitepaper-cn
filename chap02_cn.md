@@ -1,6 +1,6 @@
 2. Detailed Design 详细设计
 
-2.1 High-Level Architecture  高层次结构
+2.1 High-Level Architecture 高级架构
 
 We take Ethereum blockchain as an example to briefly discuss the overall process of an
 on-demand data query initiated by a user contract.
@@ -49,9 +49,9 @@ We’ll discuss the details in later sections.
 我们将在后面几节中讨论细节。
 
 
-2.2 On-Chain Detailed Design
+2.2 On-Chain Detailed Design 链上详细设计
 
-2.2.1 Proxy System
+2.2.1 Proxy System 代理系统
 
 
 The proxy system provides standard on-chain interfaces to user contracts and will
@@ -195,8 +195,8 @@ model to rule them all. More governance experiments and economic models will be
 researched and explored in future.
 
 链上系统将采用模块化设计模式，所有链上合约都是可升级的。
-由于它是一个开放的分布式网络环境与不同的群体有不同的经济诉求，没有一个简单完美
-模式适用于它们。今后将对更多的治理实验和经济模式进行研究和探索。
+由于它是一个开放的分布式网络环境与不同的群体有不同的经济诉求，没有一个简单的完美模式适合它们。
+今后将对更多的治理实验和经济模式进行研究和探索。
 
 ---
 
